@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sixsolution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+        <div class="painel">
+
+            Quanto você produz por safra? (em quilo) <br>
+            <input type="text" id="produz_Safra" class="input">
+            <br>
+            Quanto quilos de tomate você perde por safra? (em quilo) <br>
+            <input type="text" id="perda_Safra" class="input">
+            <br>
+            Quanto você gasta na produção? <br>
+            <input type="text" id="gasto_Safra" class="input">
+            <br>
+            Por quanto você vende? (por quilo) <br>
+            <input type="text" id="preco_Safra" class="input">
+            <br><br>
+        
+            <button onclick="calcular()" class="btn">Calcular</button>
+        
+            <br><br>
+            <div id="msg_box" class="msgBox"></div>
+            <br>
+            <div class="importante">
+                <b>Serviço digital</b> = R$ 20.000,00 Anualmente. <br><b>5 meses de teste ou devolvemos o seu dinheiro.</b><br>
+            </div>
+
+        </div>
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+
+        var safra = Number(produz_Safra.value) - Number(perda_Safra.value) ;
+
+        var lucroTotal = safra * Number(preco_Safra.value) - Number(gasto_Safra.value);
+
+        var ganho = Number(perda_Safra.value) * 0.2 ;
+
+        var resultado = Number(perda_Safra.value) - ganho ;
+
+        var lucro = (Number(produz_Safra.value) - resultado) * Number(preco_Safra.value) - Number(gasto_Safra.value);
+
+      
+
+        msg_box.innerHTML = `Você produz: <b> ${produz_Safra.value} </b> Kg   <br>
+                         Você perde: <b> ${perda_Safra.value} </b> Kg         <br>
+                         Você gasta: R$ <b> ${gasto_Safra.value} </b>           <br>
+                         Você vende por: R$ <b> ${preco_Safra.value} </b>       <br>
+                         Você lucra: R$ <b> `+lucroTotal+` </b>     
+                         <br><br>
+                         Com o nosso serviço a sua perda é diminuida em: <b> 20% </b><br>
+                         Logo a seu perda usando os nossos serviços seria de: <b>`+resultado+`</b> Kg <br>
+                         E o seu lucro será de: R$ <b>` +lucro+ `</b>`;
+        
+    };
+
+
+</script>

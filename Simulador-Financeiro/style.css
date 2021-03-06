@@ -1,0 +1,25 @@
+.painel {
+    background-color: #E7E5E5;
+    width: 40%;
+    padding: 10px;
+
+    margin: auto;
+}
+
+.msgBox {
+    background-color: #DADADA;
+    padding: 10px;
+}
+.btn {
+    margin-left: 40%;
+
+    width: 100px;
+    height: 30px;
+}
+.input {
+    margin-bottom: 5px;
+}
+.importante {
+    background-color: #ffbf00;
+    padding: 5px;
+}
