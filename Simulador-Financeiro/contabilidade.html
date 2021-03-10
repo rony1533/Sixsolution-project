@@ -40,25 +40,25 @@
 
         var safra = Number(produz_Safra.value) - Number(perda_Safra.value) ;
 
-        var lucroTotal = safra * Number(preco_Safra.value) - Number(gasto_Safra.value);
+        var lucro = safra * Number(preco_Safra.value) - Number(gasto_Safra.value);
 
         var ganho = Number(perda_Safra.value) * 0.2 ;
 
         var resultado = Number(perda_Safra.value) - ganho ;
 
-        var lucro = (Number(produz_Safra.value) - resultado) * Number(preco_Safra.value) - Number(gasto_Safra.value);
+        var lucroTotal = (Number(produz_Safra.value) - resultado) * Number(preco_Safra.value) - Number(gasto_Safra.value);
 
       
 
-        msg_box.innerHTML = `Você produz: <b> ${produz_Safra.value} </b> Kg   <br>
-                         Você perde: <b> ${perda_Safra.value} </b> Kg         <br>
-                         Você gasta: R$ <b> ${gasto_Safra.value} </b>           <br>
-                         Você vende por: R$ <b> ${preco_Safra.value} </b>       <br>
-                         Você lucra: R$ <b> `+lucroTotal+` </b>     
-                         <br><br>
-                         Com o nosso serviço a sua perda é diminuida em: <b> 20% </b><br>
-                         Logo a seu perda usando os nossos serviços seria de: <b>`+resultado+`</b> Kg <br>
-                         E o seu lucro será de: R$ <b>` +lucro+ `</b>`;
+        msg_box.innerHTML =`Você produz: <b>${produz_Safra.value}</b> Kg      <br>
+                            Você perde: <b>${perda_Safra.value}</b> Kg        <br>
+                            Você gasta: R$ <b>${gasto_Safra.value}</b>        <br>
+                            Você vende por: R$ <b>${preco_Safra.value}</b>    <br>
+                            Você lucra: R$ <b>${lucro}</b>     
+                            <br><br>
+                            Com o nosso serviço a sua perda é diminuida em: <b>20%</b> <br>
+                            Logo a seu perda usando os nossos serviços seria de: <b> ${resultado}</b> Kg <br>
+                            E o seu lucro será de: R$ <b>${lucroTotal.toFixed(2)}</b>`;
         
     };
 
