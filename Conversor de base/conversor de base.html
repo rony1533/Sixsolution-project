@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <div style=" width: 40%; margin-left: 30%; padding: 10px; background-color: rgba(180, 180, 177, 0.205); border-radius: 10px;">
+
+        <h1>Conversor de Base</h1>
+        <br>
+        <h3 id="base0"></h3>
+        <input type="text" id="demo1" placeholder="Digite o valor" style=" height: 30px; border-radius: 5px; border: solid cadetblue;">
+        <h3>Converter para:</h3>
+        <input onclick="aparecer_octal()" type="checkbox">
+        <b id='base1'></b>
+        <br>
+        <div style="display: none; background-color: rgb(189, 188, 188); border-radius: 5px; padding: 5px; 
+        width: 15%; height: 40px; font-weight: 500;" id="demo2"></div>
+        <br><br>
+        <input onclick="aparecer_hexa()" type='checkbox'>
+        <b id='base2'></b>
+        <br>
+        <div style="display: none; background-color: rgb(189, 188, 188); border-radius: 5px; padding: 5px;
+        width: 15%; height: 40px; font-weight: 500;" id="demo3"></div>
+        <br><br>
+        <input onclick="aparecer_bin()" type="checkbox" >
+        <b  id='base3'></b>
+        <br>
+        <div style="display: none; background-color: rgb(189, 188, 188); border-radius: 5px; padding: 5px;
+        width: 15%; height: 40px; font-weight: 500;" id="demo4"></div>
+        <br><br>
+        <button id='botao' onclick="converter_dec()" style="cursor: pointer; height: 50px; width: 24%; background-color: 
+        azure; border-radius: 10px; outline: 0; border: solid cadetblue; font-size: large;">Converter Decimal</button>
+        <button id='botao' onclick="convoct()" style="cursor: pointer; height: 50px; width: 24%; background-color: 
+        azure; border-radius: 10px; outline: 0; border: solid cadetblue; font-size: large;">Converter Octal</button>
+        <button id='botao' onclick="convhex()" style="cursor: pointer; height: 50px; width: 24%; background-color: 
+        azure; border-radius: 10px; outline: 0; border: solid cadetblue; font-size: large;">Converter Hexadecimal</button>
+        <button id='botao' onclick="convbin()" style="cursor: pointer; height: 50px; width: 24%; background-color: 
+        azure; border-radius: 10px; outline: 0; border: solid cadetblue; font-size: large;">Converter Binário</button>
+        
+
+        
+
+    </div>
+
+    <script>
+        function convdec() {
+            base1.innerHTML='Octal'
+            base2.innerHTML='Hexadecimal'
+            base3.innerHTML='Binário'
+            botao.onclick='converter_dec()'
+        }
+        function convoct() {
+            base0.innerHTML='Octal'
+            base1.innerHTML='Decimal'
+            base2.innerHTML='Hexadecimal'
+            base3.innerHTML='Binário'
+            var decimal = parseInt(demo1.value,8);
+    
+            let octal = decimal.toString(8);
+    
+            let hexadecimal = decimal.toString(16);
+    
+            let binaria = decimal.toString(2);
+    
+            console.log (decimal);
+            console.log (octal);
+            console.log (hexadecimal);
+            console.log (binaria);
+    
+        
+        document.getElementById("demo2").innerHTML = ` ${decimal}`;
+        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+        }
+
+        
+
+        
+            
+
+function converter_dec() {
+        base0.innerHTML='Decimal'
+        base1.innerHTML='Octal'
+        base2.innerHTML='Hexadecimal'
+        base3.innerHTML='Binário'
+            
+        var decimal = Number (demo1.value);
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+        console.log (decimal);
+        console.log (octal);
+        console.log (hexadecimal);
+        console.log (binaria);
+
+        document.getElementById("demo1").innerHTML = ` ${decimal}`;
+        document.getElementById("demo2").innerHTML = ` ${octal}`;
+        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+
+
+        }
+        function convhex() {
+            base0.innerHTML='Hexadecimal'
+            base1.innerHTML='Octal'
+            base2.innerHTML='Decimal'
+            base3.innerHTML='Binário'
+            var decimal = parseInt(demo1.value,16);
+    
+            let octal = decimal.toString(8);
+    
+            let hexadecimal = decimal.toString(16);
+    
+            let binaria = decimal.toString(2);
+    
+            console.log (decimal);
+            console.log (octal);
+            console.log (hexadecimal);
+            console.log (binaria);
+    
+        
+        document.getElementById("demo2").innerHTML = ` ${octal}`;
+        document.getElementById("demo3").innerHTML = ` ${decimal}`;
+        document.getElementById("demo4").innerHTML = ` ${binaria}`;
+        }
+        function convbin() {
+            base0.innerHTML='Binário'
+            base1.innerHTML='Octal'
+            base2.innerHTML='Hexadecimal'
+            base3.innerHTML='Decimal'
+            var decimal = parseInt(demo1.value,2);
+    
+            let octal = decimal.toString(8);
+    
+            let hexadecimal = decimal.toString(16);
+    
+            let binaria = decimal.toString(2);
+    
+            console.log (decimal);
+            console.log (octal);
+            console.log (hexadecimal);
+            console.log (binaria);
+    
+        
+        document.getElementById("demo2").innerHTML = ` ${octal}`;
+        document.getElementById("demo3").innerHTML = ` ${hexadecimal}`;
+        document.getElementById("demo4").innerHTML = ` ${decimal}`;
+        }
+
+
+        function aparecer_bin() {
+            demo4.style.display = 'block'
+        }
+
+        function aparecer_hexa() {
+            demo3.style.display = 'block'
+        }
+
+        function aparecer_octal() {
+            demo2.style.display = 'block'
+        }
+    
+
+    </script>
+
+</body>
+</html>
