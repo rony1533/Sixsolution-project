@@ -38,8 +38,10 @@
 <script>
     function calcular() {
 
+        /* Essa variavel subitrai o valor que é produzido na safra pela quantidade que se perde */
         var safra = Number(produz_Safra.value) - Number(perda_Safra.value) ;
-
+        
+        /* A variavel multiplica o valor da safra pelo preço */
         var lucro = safra * Number(preco_Safra.value) - Number(gasto_Safra.value);
 
         var ganho = Number(perda_Safra.value) * 0.2 ;
