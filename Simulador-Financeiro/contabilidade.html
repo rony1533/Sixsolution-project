@@ -50,7 +50,7 @@
 
         var lucroTotal = (Number(produz_Safra.value) - resultado) * Number(preco_Safra.value) - Number(gasto_Safra.value);
 
-      
+		var ganhoTotal = lucroTotal - lucro;
 
         msg_box.innerHTML =`Você produz: <b>${produz_Safra.value}</b> Kg      <br>
                             Você perde: <b>${perda_Safra.value}</b> Kg        <br>
@@ -60,7 +60,8 @@
                             <br><br>
                             Com o nosso serviço a sua perda é diminuida em: <b>20%</b> <br>
                             Logo a seu perda usando os nossos serviços seria de: <b>${resultado}</b> Kg <br>
-                            E o seu lucro será de: R$ <b>${lucroTotal.toFixed(2)}</b>`;
+                            E o seu lucro será de: R$ <b>${lucroTotal.toFixed(2)}</b><br>
+							E o seu ganho com o nosso serviço: R$ <b>${ganhoTotal}</b>`;
         
     };
 
