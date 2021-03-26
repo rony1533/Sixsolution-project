@@ -73,4 +73,4 @@ select * from controle;
 select * from controle where fk_sensor=1 order by data_leitura; -- select para organizar dados de um sensor por tempo na tabela
 
 SELECT * FROM Estufa join TabLogin on FKUser = TabLogin.idUser;
-SELECT * FROM Controle join Estufa on FKEstufa = Estufa.idEstufa;
+SELECT * FROM controle join sensores join estufa on fk_estufa=idEstufa and fk_sensor=id_sensor
