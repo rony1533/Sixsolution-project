@@ -1,0 +1,27 @@
+
+temperatura (esta sendo construído por periodos)
+
+acima do ideal: vermelho
+
+chegando no limite alto: laranja
+
+equilibrado: verde
+
+chgando no limite baixo: azul
+
+abaixo do ideal: roxo
+
+
+
+
+umidade
+
+<60%: roxo         (abaixo do ideal)
+
+60%-65%: azul     (chegando no limite baixo)
+
+65%-75%: verde    (equilibrado)
+
+75%-80%: laranja  (chegando no limite alto)
+
+>80%: vermelho    (acima do ideal) 
