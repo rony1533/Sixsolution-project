@@ -50,6 +50,8 @@ foreign key (fk_empresa) references empresas_parceiras(id_empresa),
 foreign key (fk_estufa) references Estufa(idEstufa)
 );
 
+insert into usuarios values      -- é perigoso inserir estufa que não pertence à empresa. Melhor deixar só fk empresa?
+(null,1,4,'Ricardo','35678959-0','login1','senha1','administrador');
 
 create table sensores (
 	id_sensor int primary key auto_increment,
