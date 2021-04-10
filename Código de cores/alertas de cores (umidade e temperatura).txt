@@ -1,0 +1,117 @@
+
+Temperatura por fase (oC):
+
+
+GERMINAÇÃO:
+
+
+acima do ideal:                vermelho  >29
+
+chegando no limite alto:       laranja   29-27
+
+equilibrado:                   verde     27-18
+
+chgando no limite baixo:       azul      18-16
+
+abaixo do ideal:               roxo      <16
+
+
+
+
+
+CRESCIMENTO VEGETATIVO:
+
+
+acima do ideal:                vermelho  >24
+
+chegando no limite alto:       laranja   24-23
+
+equilibrado:                   verde     23-22
+
+chgando no limite baixo:       azul      22-21
+
+abaixo do ideal:               roxo      <21
+
+
+
+
+PEGAMENTO DE FRUTOS (NOITE):
+
+
+acima do ideal:                vermelho  >17
+
+chegando no limite alto:       laranja   17-16
+
+equilibrado:                   verde     16-15
+
+chgando no limite baixo:       azul      15-14
+
+abaixo do ideal:               roxo      <14
+
+
+
+
+
+PEGAMENTO DE FRUTOS (DIA):
+
+
+acima do ideal:                vermelho  >24
+
+chegando no limite alto:       laranja   24-22
+
+equilibrado:                   verde     22-21
+
+chgando no limite baixo:       azul      21-19
+
+abaixo do ideal:               roxo      <19
+
+
+
+
+
+DESENVOLVIMENTO DA COR VERMELHA:
+
+
+acima do ideal:                vermelho  >24
+
+chegando no limite alto:       laranja   24-23
+
+equilibrado:                   verde     23-21
+
+chgando no limite baixo:       azul      21-20
+
+abaixo do ideal:               roxo      <20
+
+
+
+
+
+
+DESENVOLVIMENTO DA COR AMARELA:
+
+
+acima do ideal:                vermelho  >32
+
+chegando no limite alto:       laranja   32-30
+
+equilibrado:                   verde     30-23
+
+chgando no limite baixo:       azul      23-21
+
+abaixo do ideal:               roxo      <21
+
+
+
+
+
+UMIDADE
+
+<60%: roxo         (abaixo do ideal)
+
+60%-65%: azul     (chegando no limite baixo)
+
+65%-75%: verde    (equilibrado)
+
+75%-80%: laranja  (chegando no limite alto)
+
+>80%: vermelho    (acima do ideal) 
