@@ -3,7 +3,7 @@ USE Sixs;
 
 create table empresas_parceiras (            -- empresas que estão utilizando nosso serviço
 id_empresa int primary key auto_increment,
-mome varchar(60),
+nome varchar(60),
 CNPJ varchar(30),
 data_inclusao date                      -- data na qual começou a parceria
 );
