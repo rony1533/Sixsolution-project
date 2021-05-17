@@ -1,0 +1,184 @@
+.logOut {
+    background-color: white;
+    color: black;
+    width: 70px;
+    height: 20px;
+    border: 1px #ed143d solid;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.logOut:hover {
+    background-color: #ed143d;
+    color: white;
+}
+
+.box {
+    border-radius: 50px 50px 0px 0px;
+    background-color: #01A560;
+    padding-top: 30px;
+ 
+}
+.topbox {
+    margin-left: 115px;
+    margin-right: 115px;
+}
+.barra-informacao {
+    display: flex;
+    max-height: 80px;
+    max-width: 1090px;
+    margin: 0 auto;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #009456;
+    border-radius: 20px 20px 0 0;
+}
+.perfil {
+    height: 100px;
+    margin-right: 30px;
+}
+.divisor {
+    height: 60px;
+    background-color: white;
+    width: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.lista-estufa {
+    cursor: pointer;
+    height: 60px;
+}
+.div-adicionar {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    margin-left: 110px;
+    background-color: #21a26c;
+    border: 2px #0ead6a solid;
+}
+.div-adicionar img {
+    height: 60px;
+    margin-top: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.txt {
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 35px;
+    margin-top: 60px;
+}
+.div-texto {
+    float: left;
+    max-width: 750px;
+    margin-left: 50px;
+    margin-top: 35px;
+}
+.div-texto p{
+    font-size: 25px;
+    color: gray;
+}
+.centerbox {
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    padding-top: 90px;
+    padding-bottom: 20px;
+    overflow: auto;
+}
+.center_charts {
+    max-width: 1360px;
+    margin: 0 auto;
+}
+.chart-left {
+    width: 640px;
+    float: left;
+}
+.chart-left .medidor{
+    background-color: indianred;
+}
+.chart-right {
+    width: 640px;
+    float: right;
+}
+.chart-right .medidor{
+    background-color: cornflowerblue;
+}
+.medidor {
+    height: 70px;
+    font-size: 30px;
+    border-radius: 35px 35px 0px 0px;
+    text-align: center;
+    color: white;
+}
+.medidor-red {
+    background-color: #cd5c5c;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    height: 30px;
+    border-top: 1px #bf5b5b solid;
+    border-radius: 0px 0px 40px 40px;
+}
+.medidor-blue {
+    background-color: #6495ed;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    height: 30px;
+    border-top: 1px #5782d3 solid;
+    border-radius: 0px 0px 40px 40px;
+}
+.drop-medidor {
+height: 30px;
+}
+.bg-dropm {
+    background-color: #C4C4C4;
+}
+.historico {
+    background-color: #C4C4C4;
+    padding: 10px;
+    border-radius: 0px 0px 5px 5px;
+}
+.drop-btn {
+    background-color: #009456;
+    color: white;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-caixa {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border: 2px #0ead6a solid;
+    min-width: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-caixa a {
+    color: black;
+    font-size: 20px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-caixa a:hover {
+    background-color: #91d39f;
+}
+  .dropdown:hover .dropdown-caixa {
+    display: block;
+  }
+  
+  .dropdown:hover .drop-btn {
+    transform: rotateX(180deg);
+  }
+  

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/Login.css">
+
+    <title>SixSolution</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="caixa">
+
+            <a href="../index.html"><img src="../img/logo.png" class="logo"></a>
+
+            <nav>
+                <ul>
+                    <a href="../home.html">
+                        <li class="cor-red">Entrar</li>
+                    </a>
+                    <a href="servico.html">
+                        <li>Serviços</li>
+                    </a>
+                    <a href="contato.html">
+                        <li>Contato</li>
+                    </a>
+                    <a href="sobre.html">
+                        <li>Sobre nós</li>
+                    </a>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="apresentacao">
+        <div id="login" class="form" style="display: block;">
+
+            <div class="container">
+
+                <form id="form_login" method="post" onsubmit="return entrar()">
+
+                <p class="formtxt">E-mail:</p>
+                <input type="text" id="ipt_login" name="login" class="inp-simple" placeholder="insira seu e-mail"><br>
+                <p class="formtxt">Senha:</p>
+                <input name="senha" type="password" id="ipt_senha" class="inp-simple" placeholder="********">
+                <p style="cursor: pointer;" onclick="recuperar()">Esqueceu sua senha? Clique aqui</p>
+
+                <div class="alinhamento">
+                    <span onclick="cadastrar()" style="cursor: pointer;">Cadastre-se</span>
+
+                    <a>
+                        <button  id="btn_entrar" class="button">Login</button>
+                    </a>
+                </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- <div id="cadastro" class="form" style="display: none;">
+
+            <div class="container">
+
+                <p class="formtxt">Insira seu e-mail:</p>
+                <input type="text" class="inp-simple" placeholder="insira seu e-mail" id="cadastro_email">
+                <p class="formtxt">Nome Completo:</p>
+                <input type="text" class="inp-simple" placeholder="nome completo" id="cadastro_nome">
+                <p class="formtxt">Senha:</p>
+                <input type="number" class="inp-simple" placeholder="********" id="cadastro_senha">
+                <p class="formtxt">Confirme sua senha:</p>
+                <input type="number" class="inp-simple" placeholder="********" id="cadastro_Csenha">
+                <p class="formtxt">Função:</p>
+                <select class="inp-select" id="tipo">
+                    <option value=" ">--Selecionar--</option>
+                    <option value="1">Administrador</option>
+                    <option value="0">Funcionário</option>
+                </select>
+                <br>
+
+                <div class="alinhamento">
+
+                    <p onclick="logar()" style="cursor: pointer;">Já possui conta? Faça login aqui !</p>
+
+                    <button class="button" onclick="registrar()">Registar</button>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="form" style="display: none;" id="recuperar_senha">
+
+            <
+            
+            <div class="container">
+                <p class="formtxt">Para redefinir sua senha, informe seu e-mail cadastrado e lhe enviaremos um e-mail
+                    com instruções.</p>
+                <p class="formtxt">Insira seu e-mail para recuperação:</p>
+                <input type="text" class="inp-simple" placeholder="E-mail" id="cadastro_email">
+
+                <div class="alinhamento">
+                    <button onclick="enviar()" class="button">Enviar</button>
+               
+            </form>
+            </div>
+
+        </div>
+
+        <div style="display: none" class="form" id="div_msg">
+            <div class="container">
+                <p style="text-align: center;">Seu e-mail foi enviado com sucesso!</p>
+            </div>
+        </div>
+
+    </div>
+    <!--apresentacao-->
+
+    <div class="cabecalho">
+        <div class="caixa">
+            <span>
+                <p class="txt">Assine nossa Newsletter!</p>
+                <input class="inp-email" type="text" placeholder="Digite seu e-mail">
+                <button class="button">Enviar</button>
+            </span>
+            <div class="direitos">
+                <p>©SixSolution. Todos direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+function entrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'cliente.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+
+    // function cadastrar() {
+    //     login.style.display = 'none';
+    //     cadastro.style.display = 'block';
+    //     recuperar_senha.style.display = 'none'
+    //     div_msg.style.display = 'none'
+    // }
+
+    // function logar() {
+    //     cadastro.style.display = 'none';
+    //     login.style.display = 'block';
+    //     recuperar_senha.style.display = 'none'
+    //     div_msg.style.display = 'none';
+    // }
+
+
+    // function recuperar() {
+    //     cadastro.style.display = 'none';
+    //     login.style.display = 'none';
+    //     recuperar_senha.style.display = 'block'
+    //     div_msg.style.display = 'none';
+    // }
+
+    // function enviar() {
+    //     cadastro.style.display = 'none';
+    //     login.style.display = 'none';
+    //     recuperar_senha.style.display = 'none'
+    //     div_msg.style.display = 'block'
+    // }
+
+    // function registrar() {
+
+    //     var email = cadastro_email.value;
+    //     var nome = cadastro_nome.value;
+    //     var senha = cadastro_senha.value;
+    //     var Csenha = cadastro_Csenha.value;
+    //     var selectipo = tipo.value;
+
+    //     if (email != ' ' && nome != ' ' && senha != ' ' && Csenha != ' ' && selectipo != ' ') {
+
+    //         if (senha == Csenha) {
+
+    //             alert('Cadastro finalizado com sucesso!!');
+
+
+    //         } else {
+
+    //             alert('A confirmação da senha está incorreta!')
+
+    //         }
+
+    //     } else {
+
+    //         alert('Por favor preencha todos os campos.');
+
+    //     }
+    // }
+
+    // function entrar() {
+    //     var login = ipt_login.value;
+    //     var password = ipt_senha.value;
+
+    //     if (login != '' && password != '') {
+
+    //         ax_login = login.endsWith('@gmail.com') || login.endsWith('@hotmail.com');
+    //         ax_senha = password.length;
+
+    //         if (ax_login && ax_senha >= 6) {
+
+    //             ipt_login.style = 'border: #01A560 solid;';
+    //             ipt_senha.style = 'border: #01A560 solid;';
+    //             window.location.href="cliente.html";
+
+                
+
+    //         } else {
+
+
+    //             if (ax_login) {
+
+    //                 ipt_senha.style = 'border: red solid;';
+    //                 alert('A senha deve ter no minimo 6 Caracteres');
+    //                 ipt_senha.value = '';
+    //                 ipt_login.value = '';
+
+
+    //             } else {
+
+    //                 alert('Email incorreto')
+
+    //                 ipt_login.style = 'border: red solid;';
+    //                 ipt_senha.value = '';
+    //                 ipt_login.value = '';
+    //             }
+
+    //         }
+
+
+
+    //     } else {
+
+    //         alert('Por favor preencha todos os campos!.');
+
+    //     }
+
+    // }
+
+</script>

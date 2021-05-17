@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/servico.css">
+
+    <title>SixSolution</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="caixa">
+
+            <a href="../index.html"><img src="../img/logo.png" class="logo"></a>
+
+            <nav>
+                <ul>
+                    <a href="./login.html"><li>Entrar</li></a>
+                    <li class="cor-red">Serviços</li>
+                    <a href="./contato.html"><li>Contato</li></a>
+                    <a href="./sobre.html"><li>Sobre nós</li></a>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="box">
+
+        <div class="topbox">
+            <p class="txt">Serviços</p>
+
+           
+        </div>
+
+        <div class="centerbox">
+
+            <div class="painel">
+
+                <div class="div-texto">
+
+                    <p>Para que possa ter um controle melhor sobre a temperatura e a umidade da estufa,
+                        o software tem como objetivo estar sempre atualizando para o agricultor essas variáveis. Através de sensores DHT-11 conectados, que enviam sinais diretamente ao site, a informação é mostrada ao agricultor e atualizada sempre em tempo real, assim, medidas podem ser tomadas imediatamente,
+                        evitando perda de produtos e materiais.
+                        <br><br> 
+                        Se você se interessou pelo nosso serviço, faça abaixo sua simulação e tenha uma estimativa de quanto custará.
+                    
+                    </p>
+
+                    
+
+                    <img src="..//img/icons/down-arrow.png" alt="" class="arrow-down">
+
+                    
+        
+                </div>
+                
+                    <div class="img-right">
+                        
+                        <img src="../img/agro.png" alt="" class="img">
+    
+                    </div>
+
+            </div>
+            
+        </div>
+
+        <div class="centerbottom">
+            
+            <div class="painel">
+
+                <div class="left">
+
+                    <h1>Simulador Financeiro</h1>
+
+                    <div class="formulario">
+                
+                        <p>Quanto você produz por safra? (em quilo) </p>
+                        <input type="text" id="produz_Safra" class="inp-simple">
+                        
+                        <p>Quanto quilos de tomate você perde por safra? (em quilo) </p>
+                        <input type="text" id="perda_Safra" class="inp-simple">
+                        
+                        <p>Quanto você gasta na produção? </p>
+                        <input type="text" id="gasto_Safra" class="inp-simple">
+                        
+                        <p>Por quanto você vende? (por quilo) </p>
+                        <input type="text" id="preco_Safra" class="inp-simple">
+                        <br><br>
+                    
+                        <button onclick="calcular()" class="button">Calcular</button>
+                    
+                    </div>
+                    
+                </div>
+
+                <div class="right">
+
+                    <div class="titulo">
+                        <h1>Resultado</h1>
+                    </div>
+
+                    <div class="text-box">
+                        <div id="msg_box" class="msgBox"></div>
+                    </div>
+                    
+                    
+                </div>
+    
+    
+            </div>
+
+        </div>
+
+
+        <div class="bottombox">
+            <p>© SixSolution. Todos direitos reservados.</p>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        /* Essa variavel subitrai o valor que é produzido na safra pela quantidade que se perde */
+        var safra = Number(produz_Safra.value) - Number(perda_Safra.value) ;
+        
+        /* A variavel multiplica o valor da safra pelo preço */
+        var lucro = safra * Number(preco_Safra.value) - Number(gasto_Safra.value);
+
+        var ganho = Number(perda_Safra.value) * 0.2 ;
+
+        var resultado = Number(perda_Safra.value) - ganho ;
+
+        var lucroTotal = (Number(produz_Safra.value) - resultado) * Number(preco_Safra.value) - Number(gasto_Safra.value);
+
+		var ganhoTotal = lucroTotal - lucro;
+
+        msg_box.innerHTML =`Você produz: <b>${produz_Safra.value}</b> Kg      <br>
+                            Você perde: <b>${perda_Safra.value}</b> Kg        <br>
+                            Você gasta: R$ <b>${gasto_Safra.value}</b>        <br>
+                            Você vende por: R$ <b>${preco_Safra.value}</b>    <br>
+                            Você lucra: R$ <b>${lucro.toFixed(2)}</b>     
+                            <br><br>
+                            Com o nosso serviço a sua perda é diminuida em: <b>20%</b> <br>
+                            Logo a seu perda usando os nossos serviços seria de: <b>${resultado}</b> Kg <br>
+                            E o seu lucro será de: R$ <b>${lucroTotal.toFixed(2)}</b><br>
+							E o seu ganho com o nosso serviço: R$ <b>${ganhoTotal.toFixed(2)}</b> 
+                            <br><br><br>
+                            Obs: valor estimado sujeito a alterações.`;
+        
+    };
+
+
+</script>

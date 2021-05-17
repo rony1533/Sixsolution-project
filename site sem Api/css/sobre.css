@@ -1,0 +1,60 @@
+.topbox {
+    max-width: 1180px;
+    height: 90px;
+    margin: 0 auto;
+    align-items: center;
+    padding-top: 10px;
+}
+.topbox img {
+    float: left;
+}
+.divisor {
+    height: 60px;
+    background-color: white;
+    width: 5px;
+    float: left;
+}
+.txt {
+    color: white;
+    font-size: 25px;
+    margin: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    float: left;
+}
+.painel {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.centerbox {
+    background-color: white;
+    height: 600px;
+    border-radius: 20px;
+}
+.div-texto {
+    max-width: 750px;
+    margin-left: 50px;
+    float: left;
+    margin-top: 35px;
+}
+.div-texto p{
+    font-size: 25px;
+    color: gray;
+
+}
+.centerbox .img-right {
+    float: right;
+    display: grid;
+    margin-right: 50px;
+}
+.img1 {
+    border-radius: 25px;
+    height: 310px;
+    margin-top: 10px;
+}
+.img2 {
+    border-radius: 25px;
+    height: 255px;
+    margin-top: 10px;
+}
