@@ -1,0 +1,66 @@
+.apresentacao {
+    background-image: url('../img/tomate.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 570px;
+    color: white;
+    padding-top: 40px;
+    border-radius: 15px;
+}
+.apresentacao .caixa {
+    background-color: #01a561d0;
+    width: 450px;
+    border-radius: 10px;
+    margin-top: 65px;
+    margin-left: 40px;
+    padding: 10px;
+    box-shadow: 0 0px 20px 0px rgb(44, 44, 44);
+}
+.apresentacao p {
+    font-size: 30px;
+    border: 10px;
+    margin-left: 30px;
+  }
+  
+.aparesentacao_titulo {
+    padding-top: 20px;
+    font-size: 35px;
+    margin: 0;
+    text-align: center;
+}
+.cabecalho {    
+    background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 80px;
+}
+.cabecalho .caixa {
+    max-width: 1300px;
+    height: 100%;
+    margin: 0 auto;
+}
+.cabecalho span {
+    float: left;
+    margin: 0;
+    color: grey;
+}
+.cabecalho .direitos {
+    float: right;
+    margin-top: 30px;
+    color: grey;
+}
+.inp-simple {
+    border: solid #01A560;
+    border-radius: 10px;
+    width: 180px;
+    height: 20px;
+}
+.cabecalho .caixa button {
+    background-color: #01A560;
+    border: solid #01A560;
+    border-radius: 10px;
+    width: 80px;
+    height: 28px;
+    color: white;
+    cursor: pointer;
+}

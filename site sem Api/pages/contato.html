@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/contato.css">
+
+    <title>SixSolution</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="caixa">
+
+            <a href="../index.html"></a><img src="../img/logo.png" class="logo"></a>
+
+            <nav>
+                <ul>
+                    <a href="./login.html"><li>Entrar</li></a>
+                    <a href="./servico.html"><li>Serviços</li></a>
+                    <li class="cor-red">Contato</li>
+                    <a href="./sobre.html"><li>Sobre nós</li></a>
+                    
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="box">
+
+        <div class="topbox">
+            <p class="txt">Contato</p>
+        </div>
+
+        <div class="centerbox">
+            <div class="painel">
+            
+            <div class="div-formulario">
+
+                <form action="">
+
+                    <input class="inp-simple" type="text" id="" placeholder="Nome">
+                    <input class="inp-simple" type="text" id="" placeholder="E-mail">
+                    <input class="inp-simple" type="text" id="" placeholder="Empresa">
+                    <input class="box-comment" type="text" id="">
+                    <button class="button">Enviar</button>
+                </form>
+    
+            </div>
+            
+                <div class="img-right">
+                    
+                    <div class="msgbox">
+                        <p>Dúvidas? Fale com nossos consultores especialistas no mercado que estão prontos para te ajudar. 
+                            Entre em contato conosco através do formulário ao lado. 
+                            Caso prefira, temos também os canais abaixo:
+                            <br>
+                            (11)9999-9999 
+                            <br>
+                            ou 
+                            <br>
+                            contato@sixsolutions.com.br
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+ 
+
+
+        <div class="bottombox">
+            <p>© SixSolution. Todos direitos reservados.</p>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+
+        /* Essa variavel subitrai o valor que é produzido na safra pela quantidade que se perde */
+        var safra = Number(produz_Safra.value) - Number(perda_Safra.value) ;
+        
+        /* A variavel multiplica o valor da safra pelo preço */
+        var lucro = safra * Number(preco_Safra.value) - Number(gasto_Safra.value);
+
+        var ganho = Number(perda_Safra.value) * 0.2 ;
+
+        var resultado = Number(perda_Safra.value) - ganho ;
+
+        var lucroTotal = (Number(produz_Safra.value) - resultado) * Number(preco_Safra.value) - Number(gasto_Safra.value);
+
+		var ganhoTotal = lucroTotal - lucro;
+
+        msg_box.innerHTML =`Você produz: <b>${produz_Safra.value}</b> Kg      <br>
+                            Você perde: <b>${perda_Safra.value}</b> Kg        <br>
+                            Você gasta: R$ <b>${gasto_Safra.value}</b>        <br>
+                            Você vende por: R$ <b>${preco_Safra.value}</b>    <br>
+                            Você lucra: R$ <b>${lucro}</b>     
+                            <br><br>
+                            Com o nosso serviço a sua perda é diminuida em: <b>20%</b> <br>
+                            Logo a seu perda usando os nossos serviços seria de: <b>${resultado}</b> Kg <br>
+                            E o seu lucro será de: R$ <b>${lucroTotal.toFixed(2)}</b><br>
+							E o seu ganho com o nosso serviço: R$ <b>${ganhoTotal}</b> 
+                            <br><br><br>
+                            Obs: valor estimado sujeito a alterações.`;
+        
+    };
+
+
+</script>

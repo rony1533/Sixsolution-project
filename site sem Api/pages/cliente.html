@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/cliente.css">
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script> -->
+    <!-- <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script> -->
+    <!-- <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+    <script data-jsd-embedded data-key="a1f3baa3-db4d-4770-aacf-734a52b999c3" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script> -->
+    <title>SixSolution</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="caixa">
+
+            <a href="../index.html"><img src="../img/logo.png" class="logo"></a>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html">
+                            <button class="logOut">Sair</button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="box">
+
+        <div class="topbox">
+            <div class="barra-informacao">
+
+                <img src="../img/icons/Vector4.png" class="perfil" alt="">
+                <p class="txt">Bem Vindo, Danilo!</p>
+
+                <div class="divisor"></div>
+                ​<div class="dropdown">
+                    <img class="drop-btn" src="../img/icons/Vector6.png" alt="">
+                    
+                    <div class="dropdown-caixa">
+                    <a href="#">Estufa 02E11033</a>
+                    <a href="#">Estufa 03E11033</a>
+                    <a href="#">Estufa 04E11033</a>
+                    </div>
+                  </div>
+
+                
+                <p class="txt">Estufa 01E11033</p>
+
+            </div>
+        </div>
+
+        <div class="centerbox">
+
+            <div class="center_charts">
+                <div class="chart-left">
+                    <canvas id="chart_temperatura"></canvas>
+                    <div class="medidor">
+                        <div>
+                            <!-- <p>Média: <label id="average">0.0</label><br> -->
+                                <!-- Média Hora: <label id="averageHour">0.00</label> -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dropm">
+
+                        <div class="medidor-red">
+                            <img class="drop-medidor" src="../img/icons/Vector6.png" alt="">
+                        </div>
+
+                    </div>
+                    <div class="historico">
+
+                    </div>
+
+                </div>
+                
+                <div class="chart-right">
+                    <canvas id="chart_umidade"></canvas>
+                    <div class="medidor">
+                        <div>
+                            <!-- <p>Média: <label id="averageHumidity">0.0</label><br> -->
+                                <!-- Média Hora: <label id="averageHourHumidity">0.00</label> -->
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-dropm">
+
+                        <div class="medidor-blue"> 
+                            <img class="drop-medidor" src="../img/icons/Vector6.png" alt="" >
+                        </div>
+
+                    </div>
+                    <div class="historico">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        <!--centerbox-->
+
+        <div class="bottombox">
+            <p>© SixSolution. Todos direitos reservados.</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    // var ctx = document.getElementById("chart_umidade").getContext('2d');
+    // ctx.canvas.width = 640;
+    // ctx.canvas.height = 320;
+
+    // var umidade = {
+    //     type: 'line',
+    //     data: {
+    //         datasets: [{
+    //             label: 'Umidade',
+    //             type: 'line',
+    //             backgroundColor: ['rgba(81, 153, 241, 0.3)'],
+    //             borderColor: ['blue',],
+    //             borderWidth: 1
+    //         }]
+    //     },
+
+    //     options: {
+    //         scales: {
+    //             xAxes: [{
+    //                 //type: 'value',
+    //                 distribution: 'series',
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 scaleLabel: {
+    //                     display: true,
+    //                     labelString: 'Umidade'
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         },
+    //         animation: {
+    //             duration: 0
+    //         }
+    //     }
+    // };
+
+    // var chart_umidade = new Chart(ctx, umidade);
+
+    // this.lastIndexTempHumidity = 0;
+    // this.timeHumidity = 0;
+
+    // function get_dataHumidity() {
+
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3000/api/humidity', false);
+    //     http.send(null);
+
+    //     var obj = JSON.parse(http.responseText);
+    //     if (obj.data.length == 0) {
+    //         return;
+    //     }
+
+    //     var _lastIndexTemp = this.lastIndexTempHumidity;
+    //     this.lastIndexTempHumidity = obj.data.length;
+    //     listTemp = obj.data.slice(_lastIndexTemp);
+
+    //     listTemp.forEach(data => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (chart_umidade.data.labels.length == 10 && chart_umidade.data.datasets[0].data.length == 10) {
+    //             chart_umidade.data.labels.shift();
+    //             chart_umidade.data.datasets[0].data.shift();
+    //         }
+
+    //         chart_umidade.data.labels.push(this.time++);
+    //         chart_umidade.data.datasets[0].data.push(parseFloat(data));
+    //         chart_umidade.update();
+    //     });
+
+    //     document.getElementById('averageHumidity').textContent = obj.average;
+    //     document.getElementById('averageHourHumidity').textContent = obj.averageHour;
+
+    // }
+
+
+    //Segundo Gráfico
+
+    // var ctx2 = document.getElementById("chart_temperatura").getContext('2d');
+    // ctx.canvas.width = 640;
+    // ctx.canvas.height = 320;
+
+    // var temperatura = {
+    //     type: 'line',
+    //     data: {
+    //         datasets: [{
+    //             label: 'Temperatura',
+    //             type: 'line',
+    //             backgroundColor: ['rgba(255, 0, 0, 0.3)'],
+    //             borderColor: ['red',],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             xAxes: [{
+    //                 //type: 'value',
+    //                 distribution: 'series',
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }],
+    //             yAxes: [{
+    //                 scaleLabel: {
+    //                     display: true,
+    //                     labelString: 'Temperatura'
+    //                 },
+    //                 ticks: {
+    //                     beginAtZero: true
+    //                 }
+    //             }]
+    //         },
+    //         animation: {
+    //             duration: 0
+    //         }
+    //     }
+
+    // };
+
+
+    // var chart_temperatura = new Chart(ctx2, temperatura)
+
+    // this.lastIndexTemp = 0;
+    // this.time = 0;
+
+    // function get_data() {
+
+    //     var http = new XMLHttpRequest();
+    //     http.open('GET', 'http://localhost:3000/api', false);
+    //     http.send(null);
+
+    //     var obj = JSON.parse(http.responseText);
+    //     if (obj.data.length == 0) {
+    //         return;
+    //     }
+
+    //     var _lastIndexTemp = this.lastIndexTemp;
+    //     this.lastIndexTemp = obj.data.length;
+    //     listTemp = obj.data.slice(_lastIndexTemp);
+
+    //     listTemp.forEach(data => {
+    //         //Máximo de 60 itens exibidos no gráfico
+    //         if (chart_temperatura.data.labels.length == 10 && chart_temperatura.data.datasets[0].data.length == 10) {
+    //             chart_temperatura.data.labels.shift();
+    //             chart_temperatura.data.datasets[0].data.shift();
+    //         }
+
+    //         chart_temperatura.data.labels.push(this.time++);
+    //         chart_temperatura.data.datasets[0].data.push(parseFloat(data));
+    //         chart_temperatura.update();
+    //     });
+
+    //     document.getElementById('average').textContent = obj.average;
+    //     document.getElementById('averageHour').textContent = obj.averageHour;
+
+    // }
+
+    // setInterval(() => {
+    //     get_data();
+    //     get_dataHumidity();
+    // }, 5000);
+
+</script>
