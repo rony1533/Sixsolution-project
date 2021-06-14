@@ -30,7 +30,7 @@ create table contratos(
 	id_contrato	int primary key auto_increment, 
 	fk_reino	int, 
 	fk_cla		int, 
-	missão		varchar(128), 
+	missao		varchar(128), 
 	recompensa	double,
 	foreign key (fk_reino) references reinos(id_reino),
 	foreign key (fk_cla) references clas(id_cla)
