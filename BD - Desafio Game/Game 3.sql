@@ -72,7 +72,7 @@ insert into aventureiros values
 (2,'Mauro','A',1,2),
 (3,'Lucas','B',2,2),
 (4,'Angélica','C',1,1),
-(5,'Mauro','F',3,3),
+(5,'Marcos','F',3,3),
 (6,'Valquíria','D',3,2);
 
 
