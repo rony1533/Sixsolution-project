@@ -210,7 +210,7 @@ select aventureiros.nome,aventureiros.ranking,monstros.raca from aventureiros
 join batalhas on fk_aventureiro=id_aventureiro 
 join monstros on fk_monstro=id_monstro order by ranking;
 
--- exibir, para cada batalha, o aventureiro, a arma utilizada por ele e a raca do monstro combatido 
+-- exibir, para cada batalha, o aventureiro, a arma da classe utilizada por ele e a raca do monstro combatido 
 -- ordenado pelo nome do aventureiro (hard)
 
 select nome,arma,raca from classes join aventureiros on fk_classe=id_classe 
