@@ -248,7 +248,7 @@ select sum(monstros.drop_moedas) from monstros join batalhas on fk_monstro=id_mo
 
 
 drop database fantasia;
-
+-- 
 select monstros.drop_moedas,batalhas.* from monstros join batalhas on fk_monstro=id_monstro; -- montros e batalhas das quais participaram
 
 select sum(monstros.drop_moedas),batalhas.* from monstros join batalhas on fk_monstro=id_monstro;
