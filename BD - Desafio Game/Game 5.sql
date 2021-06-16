@@ -213,14 +213,14 @@ select count(fk_monstro) from batalhas where fk_monstro=1000;
 select sum(recompensa) from contratos where fk_reino=1 or missao like '%Westeros%';
 
 
--- exibir os nomes de todos os aventureiros e suas habilidades ordenados pelo nome (medium)
+-- exibir os nomes de todos os aventureiros ao lado de suas habilidades ordenados pelo nome dos aventureiros (medium)
 
 select aventureiros.nome,habilidades.habilidade from aventureiros 
 join aventureiro_habilidade on fk_aventureiro=id_aventureiro
 join habilidades on fk_habilidade=id_habilidade order by nome; 
 
 
--- exibir os nomes dos reinos ao lado da média do valor de recompensa de seus contratos (medium)
+-- exibir os nomes dos reinos ao lado das médias dos valores de recompensa de seus contratos (medium)
 
 select nome_reino,avg(recompensa) from reinos join contratos on fk_reino=id_reino group by nome_reino;
 
